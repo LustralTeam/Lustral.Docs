@@ -67,7 +67,7 @@ If a requirement is not met, the mod is not loaded and the log states the reason
 | Different game | `is for BloonsTD6; the running game is PEAK` |
 | Unsupported game version | `is for BloonsTD6 55.*; the installed version is 56.3` |
 | Unsupported Unity version | `requires Unity >=6000.0; the game uses Unity 2022.3.62f2` |
-| Different scripting backend | `is built for IL2CPP games; this game uses Mono` |
+| Different scripting backend | `is built for IL2CPP games; this game uses Mono (install the mod's Mono package instead, if it has one)` |
 | Newer Lustral version required | `requires Lustral ^0.4; the installed version is 0.3.1` |
 
 Users can override the checks by forcing the mod in `Lustral/loader.toml`:

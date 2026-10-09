@@ -71,8 +71,7 @@ Lustral's analyzers validate `[HarmonyPatch]` classes against the game's assembl
 resolution rules as Harmony at runtime:
 
 - [LUS0101](/reference/analyzers#lus0101): the target method does not exist, for example because of a typo or a game
-  update. Reported for IL2CPP games, whose interop assemblies expose every member; on Mono games, private members are
-  not visible to the compiler and are not reported.
+  update. Private methods are included.
 - [LUS0102](/reference/analyzers#lus0102): the target method is overloaded and the patch does not specify an overload.
 - [LUS0103](/reference/analyzers#lus0103): a patch parameter matches neither a parameter of the target method nor one
   of Harmony's special parameters (`__instance` on a static method, `__result` on a `void` method, or `___field` for a
@@ -101,6 +100,23 @@ Patching works the same way on IL2CPP games, with the following differences resu
   called from code where it was not inlined. If a patch on a short method, such as a property getter, never runs, patch
   its callers instead.
 - **Transpilers are not supported**, since the game contains native code rather than IL. Use prefixes and postfixes.
+
+## Patches That Do Not Run
+
+A patch runs only when the game calls the patched method. If a patch never runs:
+
+- **The method has not been called yet.** Some games wait on their first screen for a key press before they load the
+  main menu, so a patch on a menu class runs only after that input. Patch a class from the first scene instead, or
+  confirm the patch with the input given.
+- **The method is inlined** (IL2CPP games only; see above). Patch its callers instead.
+- **The patch targets the wrong overload.** Specify the parameter types (see [Overloaded Methods](#overloaded-methods)).
+
+If a patched method no longer exists, for example after a game update, the mod fails to load and the log names the patch
+class and the missing method:
+
+```txt
+[Error] [Core] you.betterhud failed to load: DisplayTipPatch patches HUDManager.DisplayTip, which does not exist in this version of the game
+```
 
 ## Removing Patches
 

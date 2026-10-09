@@ -29,9 +29,9 @@ determine their target in code (`TargetMethod`, `TargetMethods`) or specify the 
 ### LUS0101 {#lus0101}
 
 **Harmony patch target not found** (warning). The specified method does not exist, including in base types, which
-typically indicates a typing error or a member renamed in a game update. Reported only where all members are visible:
-IL2CPP interop assemblies and the mod's own code. Private members of Mono game assemblies are not visible to the
-compiler and are therefore not reported.
+typically indicates a typing error or a member renamed in a game update. Private members are included: on Mono games,
+the analyzer reads the private members of the game's assemblies, which the compiler does not otherwise import. If a
+target is removed in a game update after the mod was built, the mod fails to load and the log names the missing method.
 
 ### LUS0102 {#lus0102}
 

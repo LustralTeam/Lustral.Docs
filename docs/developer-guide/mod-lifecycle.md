@@ -71,6 +71,7 @@ Lustral isolates failures so that one mod cannot prevent others from loading:
 
 - **The constructor or `OnLoad` throws an exception**: the mod fails to load. The error and stack trace are logged, any
   Harmony patches the mod applied are removed, and mods that depend on it are not loaded. All other mods load normally.
+  If a Harmony patch targets a method that does not exist, the error names the patch class and the method.
 - **`OnGameReady`, `OnShutdown`, an event handler or a coroutine throws an exception**: the error is logged under the
   mod's ID and execution continues. A coroutine that throws is stopped; an event handler remains subscribed.
 - **An unhandled exception occurs on a thread started by the mod**: on IL2CPP games this terminates the game, as in any

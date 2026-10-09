@@ -96,6 +96,30 @@ using less common ones, check for their presence first (through reflection or ex
 [`Game.UnityVersion`](/api/game-info#unityversion) and [`Game.Backend`](/api/game-info#backend) to determine the
 environment.
 
+These exceptions are thrown when the method containing the call is compiled, before any of its code runs, so a
+`try` block in the same method does not catch them. Place the call in a separate method and handle the exception in
+the caller:
+
+```csharp
+public override void OnGameReady()
+{
+    try
+    {
+        DrawOverlay();
+    }
+    catch (Exception e) when (e is MissingMethodException or TypeLoadException)
+    {
+        Log.Warn($"The overlay is not available in this game: {e.Message}");
+    }
+}
+
+private static void DrawOverlay() => GUI.Label(new Rect(10, 10, 200, 25), "Hello");
+```
+
+Games also differ in their culture settings: some use the invariant culture, others the culture of the player's
+system, in which the decimal separator may be a comma. Format and parse numbers in files and network data with
+`CultureInfo.InvariantCulture`. Settings files written by Lustral are culture-independent.
+
 ## Publishing
 
 With [`ModPackage`](./publishing#creating-a-release-package) enabled, a Release build produces one package per backend:

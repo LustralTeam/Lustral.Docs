@@ -91,7 +91,7 @@ public sealed class Settings
 }
 ```
 
-and bind it in `OnLoad`:
+and bind it in `OnLoad`. The setting now controls the template's scene logging:
 
 ```csharp
 public Settings Settings { get; private set; } = null!;
@@ -99,8 +99,11 @@ public Settings Settings { get; private set; } = null!;
 public override void OnLoad()
 {
     Settings = Config.Bind<Settings>();
+    Harmony.PatchAll(typeof(ModEntry).Assembly);
+
     if (Settings.LogScenes)
         Events.SceneLoaded += scene => Log.Info($"Scene loaded: {scene}");
+    Log.Info($"{Info.Name} {Info.Version} loaded in {Game.Name} {Game.Version}");
 }
 ```
 
@@ -145,7 +148,8 @@ internal static class DisplayTipPatch
 ```
 
 `Harmony.PatchAll` in `OnLoad` applies every `[HarmonyPatch]` class in the mod. If the method name or parameters are
-incorrect, the build reports a warning ([LUS0101](/reference/analyzers#lus0101)).
+incorrect, the build reports a warning ([LUS0101](/reference/analyzers#lus0101)). A patch runs only when the game calls
+the method; if it never runs, see [Patches That Do Not Run](./harmony-patching#patches-that-do-not-run).
 
 ## Next Steps
 

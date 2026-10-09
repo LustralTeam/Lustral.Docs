@@ -66,7 +66,7 @@ dotnet new lustral-mod -n BetterHud --game "Lethal Company" --id you.betterhud
 | --- | --- |
 | `-n` | The project name, also used as the mod's display name. |
 | `--game` | The name of the game's installation folder in a Steam or Epic Games Launcher library (for example `Lethal Company`), or the full path to the game folder. |
-| `--id` | The mod ID: lowercase letters and digits, separated by dots, dashes or underscores. Prefix it with your name to avoid conflicts. Defaults to the project name in lowercase. |
+| `--id` | The mod ID: lowercase letters and digits, separated by dots, hyphens or underscores. Prefix it with your name to avoid conflicts. Defaults to the project name in lowercase. |
 | `--mono-game`, `--il2cpp-game` | Instead of `--game`, for a mod that targets both backends (see [Multi-Backend Mods](./multi-backend-mods)). |
 
 The project contains two files, `BetterHud.csproj` and `ModEntry.cs`, described in

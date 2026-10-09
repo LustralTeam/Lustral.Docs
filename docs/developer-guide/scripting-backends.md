@@ -62,6 +62,16 @@ int count = transform.childCount;           // Il2CppSystem.Int32 to int
 
 To use .NET string methods (`Contains`, `Split`, formatting), assign the value to a `string` first.
 
+Members that take `object` take `Il2CppSystem.IObject` instead. C# does not convert a .NET string to an interface
+type implicitly, so convert it to `Il2CppSystem.String` explicitly. In a Harmony patch, specify such a parameter as
+`typeof(Il2CppSystem.IObject)`:
+
+```csharp
+Debug.Log((Il2CppSystem.String)"Hello");
+
+[HarmonyPatch(typeof(Debug), nameof(Debug.Log), typeof(Il2CppSystem.IObject))]
+```
+
 ### Collections
 
 Game collections are IL2CPP collections: `Il2CppSystem.Collections.Generic.List<T>`, `Dictionary<TKey, TValue>`,
