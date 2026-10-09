@@ -132,7 +132,7 @@ export default defineConfig({
     outline: { level: [2, 3] },
     footer: {
       message: 'Mods are third-party software. Lustral does not verify their behavior and is not responsible for any damage they cause.',
-      copyright: 'Documentation licensed under MIT No Attribution. Lustral is licensed under the Mozilla Public License 2.0.',
+      copyright: 'Documentation licensed under MIT No Attribution. Lustral is licensed under the GNU Lesser General Public License 3.0.',
     },
   },
 })

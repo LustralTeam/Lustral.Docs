@@ -115,8 +115,8 @@ by the build allows Lustral to verify the download. Multi-backend mods list each
 Mods can be distributed under any license. The project template and the sample mods are licensed under
 [MIT No Attribution](https://github.com/LustralTeam/Lustral/blob/master/samples/LICENSE), which permits any use without
 attribution. Lustral itself is licensed under the
-[Mozilla Public License 2.0](https://github.com/LustralTeam/Lustral/blob/master/LICENSE), which applies to Lustral's own
-files only, not to mods that use its API. The code examples in this documentation are also licensed under MIT No
+[GNU Lesser General Public License 3.0](https://github.com/LustralTeam/Lustral/blob/master/COPYING.LESSER), which applies to
+Lustral and modified versions of it, not to mods that use its API. The code examples in this documentation are also licensed under MIT No
 Attribution and can be used in mods without restriction.
 
 Declare the mod's license with `PackageLicenseExpression` in the project file, as an

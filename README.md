@@ -37,4 +37,4 @@ messages must match the messages in the current Lustral version. Contributions t
 
 The documentation is licensed under [MIT No Attribution](LICENSE), so that its text and code examples can be used
 without restriction, including in mods. Lustral itself is licensed under the
-[Mozilla Public License 2.0](https://github.com/LustralTeam/Lustral/blob/master/LICENSE).
+[GNU Lesser General Public License 3.0](https://github.com/LustralTeam/Lustral/blob/master/COPYING.LESSER).
