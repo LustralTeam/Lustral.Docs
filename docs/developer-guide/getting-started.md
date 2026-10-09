@@ -9,7 +9,8 @@ that loads in the game.
 - **[.NET 10 SDK](https://dotnet.microsoft.com/download/dotnet/10.0)**. It builds mods for both scripting backends:
   IL2CPP mods target .NET 10, Mono mods target .NET Standard 2.1.
 - **An IDE**: Visual Studio 2022 (17.14 or later) or 2026, JetBrains Rider, or Visual Studio Code with the C# Dev Kit.
-- **The game**, installed locally. Steam games are located by their folder name; other games by their path.
+- **The game**, installed locally. Games from Steam and the Epic Games Launcher are located by the name of their
+  installation folder; other games by their path.
 
 ## Step 1: Install Lustral in the Game
 
@@ -64,7 +65,7 @@ dotnet new lustral-mod -n BetterHud --game "Lethal Company" --id you.betterhud
 | Option | Description |
 | --- | --- |
 | `-n` | The project name, also used as the mod's display name. |
-| `--game` | The game's folder name under a Steam library's `steamapps\common`, or the full path to the game folder. |
+| `--game` | The name of the game's installation folder in a Steam or Epic Games Launcher library (for example `Lethal Company`), or the full path to the game folder. |
 | `--id` | The mod ID: lowercase letters and digits, separated by dots, dashes or underscores. Prefix it with your name to avoid conflicts. Defaults to the project name in lowercase. |
 | `--mono-game`, `--il2cpp-game` | Instead of `--game`, for a mod that targets both backends (see [Multi-Backend Mods](./multi-backend-mods)). |
 
@@ -88,7 +89,7 @@ Close the game before building; Windows prevents the build from replacing files 
 
 ## Step 5: Run
 
-Launch the game through Steam, or press **F5** in the IDE to launch it with the debugger attached (see
+Launch the game as usual, or press **F5** in the IDE to launch it with the debugger attached (see
 [Debugging](./debugging)). The log then contains:
 
 ```txt
@@ -100,9 +101,10 @@ The second line is written by the template's code and reports the game name and 
 
 Continue with [Creating Your First Mod](./first-mod) to add functionality.
 
-## Games Outside Steam
+## Games From Other Sources
 
-Specify the full path with `--game "D:\Games\Some Game"`. To keep a machine-specific path out of the project file,
+Lustral searches all Steam libraries and Epic Games Launcher libraries for the game's installation folder. For a game
+installed in any other way, specify the full path with `--game "D:\Games\Some Game"`. To keep a machine-specific path out of the project file,
 create `Game.props.user` next to the project instead (the template's `.gitignore` excludes it from source control):
 
 ```xml
@@ -119,7 +121,7 @@ The SDK's error messages describe the required change. Common errors:
 
 | Error | Resolution |
 | --- | --- |
-| Game not found: *game* | Check the folder name under `steamapps\common`, or specify the full path or use `Game.props.user`. |
+| Game not found: *game* | Check the name of the game's installation folder, or specify the full path or use `Game.props.user`. |
 | *Game* has no interop assemblies | The game uses IL2CPP and Lustral has not run in it yet. Install Lustral and launch the game once. |
 | Could not deploy *id* to *game* | Close the game and build again. |
 | Lustral is not installed in *folder* (warning) | The mod was built but cannot be loaded. Install Lustral in the game. |

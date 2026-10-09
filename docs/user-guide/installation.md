@@ -4,8 +4,12 @@ Lustral is installed separately in each game.
 
 ## Step 1: Locate the Game Folder
 
-The game folder is the folder that contains the game's executable (`.exe`). In Steam, right-click the game in your
-library and select **Manage > Browse local files**.
+The game folder is the folder that contains the game's executable (`.exe`).
+
+- **Steam:** right-click the game in your library and select **Manage > Browse local files**.
+- **Epic Games Launcher:** in your library, click the three dots next to the game, select **Manage**, and open the
+  folder shown under **Installation**.
+- **Other sources:** the folder you chose when installing the game.
 
 ## Step 2: Download the Correct Package
 

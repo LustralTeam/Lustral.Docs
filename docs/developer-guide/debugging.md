@@ -7,6 +7,12 @@ Visual Studio, Rider or Visual Studio Code builds and deploys the mod and starts
 also sets `SteamAppId`; without it, a Steam game started outside Steam restarts itself through Steam, detaching the
 debugger.
 
+Games from the Epic Games Launcher are started directly, which works for most games. A game that requires the launcher
+exits or restarts through it when started directly; start such a game from the Epic Games Launcher and attach the
+debugger to the running game instead. On IL2CPP games, use the IDE's *Attach to Process*. On Mono games, Mono's
+debugger agent must be enabled when the game starts: set the user environment variable `LUSTRAL_MONO_DEBUGGER` to
+`127.0.0.1:56000`, restart the Epic Games Launcher, and remove the variable after debugging.
+
 The profile contains the local game path, so the template's `.gitignore` excludes it from source control. Delete the
 file to have the SDK regenerate it, or set `<LustralLaunchSettings>false</LustralLaunchSettings>` to disable it.
 

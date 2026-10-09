@@ -20,7 +20,7 @@ generates the [manifest](./manifest) and deploys the mod to `<game>/Mods/<id>/`.
 
 | Property | Description |
 | --- | --- |
-| `LustralGame` | The game's folder name under a Steam library's `steamapps\common` (for example `Lethal Company`), or the full path to the game folder. All Steam libraries on the machine are searched. |
+| `LustralGame` | The name of the game's installation folder (for example `Lethal Company`), or the full path to the game folder. All Steam libraries and Epic Games Launcher libraries on the computer are searched, Steam first. Games installed in any other way are specified by path. |
 | `LustralGameDir` | The full path to the game folder. Takes precedence over `LustralGame`. Set it in `Game.props.user` next to the project to keep machine-specific paths out of source control. |
 | `LustralMonoGame`, `LustralIl2CppGame` | Used instead of `LustralGame` for [multi-backend mods](/developer-guide/multi-backend-mods): one game of each kind. The project is built once per backend (`netstandard2.1` for Mono, `net10.0` for IL2CPP), each against and into its game. |
 | `LustralMonoGameDir`, `LustralIl2CppGameDir` | The full paths of those games, analogous to `LustralGameDir`. |
