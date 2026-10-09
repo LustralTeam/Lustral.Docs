@@ -48,6 +48,9 @@ testing; the resulting builds run in any other game of the same kind.
   can be inspected.
 - **F5** offers a launch profile for each game. [Debugging](./debugging) works as it does for single-backend mods.
 - Machine-specific paths belong in `Game.props.user`, as `<LustralMonoGameDir>` and `<LustralIl2CppGameDir>`.
+- `LustralGame` and `LustralGameDir` cannot be combined with these properties. A project that sets both, including a
+  `LustralGameDir` left in `Game.props.user`, fails to build with an error explaining the conflict.
+- `LustralGameStore` applies to both games; `LustralMonoGameStore` and `LustralIl2CppGameStore` set the store per game.
 
 ## Backend-Specific Code
 
