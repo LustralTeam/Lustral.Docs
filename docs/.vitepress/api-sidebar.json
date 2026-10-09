@@ -1,0 +1,92 @@
+[
+  {
+    "text": "Overview",
+    "link": "/api/"
+  },
+  {
+    "text": "The mod",
+    "items": [
+      {
+        "text": "Mod",
+        "link": "/api/mod"
+      },
+      {
+        "text": "ModInfo",
+        "link": "/api/mod-info"
+      },
+      {
+        "text": "ILog",
+        "link": "/api/i-log"
+      }
+    ]
+  },
+  {
+    "text": "The game",
+    "items": [
+      {
+        "text": "GameInfo",
+        "link": "/api/game-info"
+      },
+      {
+        "text": "ScriptingBackend",
+        "link": "/api/scripting-backend"
+      },
+      {
+        "text": "GameEvents",
+        "link": "/api/game-events"
+      },
+      {
+        "text": "SceneInfo",
+        "link": "/api/scene-info"
+      }
+    ]
+  },
+  {
+    "text": "Coroutines",
+    "items": [
+      {
+        "text": "Coroutines",
+        "link": "/api/coroutines"
+      },
+      {
+        "text": "CoroutineHandle",
+        "link": "/api/coroutine-handle"
+      },
+      {
+        "text": "Wait",
+        "link": "/api/wait"
+      }
+    ]
+  },
+  {
+    "text": "Settings",
+    "items": [
+      {
+        "text": "ModConfig",
+        "link": "/api/mod-config"
+      }
+    ]
+  },
+  {
+    "text": "Assets",
+    "items": [
+      {
+        "text": "ModAssets",
+        "link": "/api/mod-assets"
+      },
+      {
+        "text": "ModAssetBundle",
+        "link": "/api/mod-asset-bundle"
+      }
+    ]
+  },
+  {
+    "text": "Other mods",
+    "items": [
+      {
+        "text": "LoadedMods",
+        "link": "/api/loaded-mods"
+      }
+    ]
+  }
+]

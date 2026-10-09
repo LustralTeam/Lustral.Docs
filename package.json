@@ -1,0 +1,14 @@
+{
+  "name": "lustral-docs",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "preview": "vitepress preview docs",
+    "api": "dotnet run tools/apigen.cs -- ../Lustral"
+  },
+  "devDependencies": {
+    "vitepress": "1.6.4"
+  }
+}
