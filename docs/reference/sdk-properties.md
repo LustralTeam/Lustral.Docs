@@ -24,6 +24,8 @@ generates the [manifest](./manifest) and deploys the mod to `<game>/Mods/<id>/`.
 | `LustralGameDir` | The full path to the game folder. Takes precedence over `LustralGame`. Set it in `Game.props.user` next to the project to keep machine-specific paths out of source control. |
 | `LustralMonoGame`, `LustralIl2CppGame` | Used instead of `LustralGame` for [multi-backend mods](/developer-guide/multi-backend-mods): one game of each kind. The project is built once per backend (`netstandard2.1` for Mono, `net10.0` for IL2CPP), each against and into its game. |
 | `LustralMonoGameDir`, `LustralIl2CppGameDir` | The full paths of those games, analogous to `LustralGameDir`. |
+| `LustralGameStore` | `Steam` or `Epic`: restricts the search for `LustralGame` to that store's libraries. Needed only if the game is installed from both stores under the same folder name; otherwise both are searched, Steam first. |
+| `LustralMonoGameStore`, `LustralIl2CppGameStore` | The store of each game of a multi-backend mod, analogous to `LustralGameStore`. |
 | `LustralBackend` | Set on the command line (`-p:LustralBackend=Mono`) to build only one backend of a multi-backend mod. |
 
 The SDK defines the following properties for use in the project: `LustralBackend` (`Il2Cpp` or `Mono`),

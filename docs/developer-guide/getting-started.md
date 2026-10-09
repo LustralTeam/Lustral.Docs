@@ -101,11 +101,19 @@ The second line is written by the template's code and reports the game name and 
 
 Continue with [Creating Your First Mod](./first-mod) to add functionality.
 
-## Games From Other Sources
+## Locating the Game
 
-Lustral searches all Steam libraries and Epic Games Launcher libraries for the game's installation folder. For a game
-installed in any other way, specify the full path with `--game "D:\Games\Some Game"`. To keep a machine-specific path out of the project file,
-create `Game.props.user` next to the project instead (the template's `.gitignore` excludes it from source control):
+The SDK searches all Steam libraries and Epic Games Launcher libraries for the game's installation folder, Steam first.
+If the game is installed from both stores under the same folder name, the build reports it; to use the Epic Games
+Launcher installation, add the following to the project file:
+
+```xml
+<LustralGameStore>Epic</LustralGameStore>
+```
+
+For a game installed in any other way, specify the full path with `--game "D:\Games\Some Game"`. To keep a
+machine-specific path out of the project file, create `Game.props.user` next to the project instead (the template's
+`.gitignore` excludes it from source control):
 
 ```xml
 <Project>
