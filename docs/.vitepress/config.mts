@@ -41,6 +41,7 @@ const developerSidebar: DefaultTheme.SidebarItem[] = [
     items: [
       { text: 'Mod Lifecycle', link: '/developer-guide/mod-lifecycle' },
       { text: 'Logging', link: '/developer-guide/logging' },
+      { text: 'Debugging', link: '/developer-guide/debugging' },
       { text: 'Harmony Patching', link: '/developer-guide/harmony-patching' },
       { text: 'Game Events', link: '/developer-guide/game-events' },
       { text: 'Coroutines', link: '/developer-guide/coroutines' },
@@ -68,7 +69,6 @@ const developerSidebar: DefaultTheme.SidebarItem[] = [
   {
     text: 'Distribution',
     items: [
-      { text: 'Debugging', link: '/developer-guide/debugging' },
       { text: 'Publishing and Updates', link: '/developer-guide/publishing' },
     ],
   },
