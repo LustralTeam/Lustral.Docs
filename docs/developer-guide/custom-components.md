@@ -98,10 +98,31 @@ exception. Assign each one in `Awake`, as shown above. Declare its type without 
 source generator does not support.
 :::
 
-::: info Interfaces
-Injected classes cannot yet implement the game's or Unity's interfaces, such as `IPointerClickHandler` and other UI
-event handlers. Use Unity's `EventTrigger` component, or patch the game's own handler, in the meantime.
-:::
+### Interfaces
+
+Injected classes can implement the game's and Unity's interfaces, such as `IPointerClickHandler` and the other UI event
+handlers, and the game's code calls them as it calls its own classes. Mark each method that implements an interface
+method with `[Il2CppMethod]`; without it, the class cannot be registered, and the build reports an error
+([LUS0305](/reference/analyzers#lus0305)).
+
+```csharp
+using Il2CppInterop.Common.Attributes;
+using UnityEngine;
+using UnityEngine.EventSystems;
+
+[InjectedType]
+public partial class ClickCounter : MonoBehaviour, IPointerClickHandler
+{
+    [Il2CppField]
+    public partial Il2CppSystem.Int32 Clicks { get; set; }
+
+    [Il2CppMethod]
+    public void OnPointerClick(PointerEventData eventData) => Clicks = Clicks + 1;
+}
+```
+
+As in any Unity project, a GameObject receives pointer events only if it has a raycast target, such as an `Image`, and the
+scene has an `EventSystem`. Generic interfaces cannot be implemented ([LUS0304](/reference/analyzers#lus0304)).
 
 ## Supporting Both Backends
 

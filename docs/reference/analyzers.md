@@ -85,3 +85,11 @@ from a non-generic `[Il2CppMethod]` method instead; within the mod's own code, g
 type, derived from a generic type, or that implements a generic IL2CPP interface; for the first three, it throws when the
 mod loads. Declare injected types at the top level of a namespace, without type parameters. Generic .NET interfaces,
 such as `IEquatable<T>`, are not affected, because they are not part of the IL2CPP type.
+
+### LUS0305 {#lus0305}
+
+**IL2CPP interface implementations require [Il2CppMethod]** (error). IL2CPP calls an interface method, such as
+`IPointerClickHandler.OnPointerClick`, through the injected class's method table, which contains only the methods marked
+`[Il2CppMethod]`. If a method that implements an IL2CPP interface lacks the attribute, Il2CppInterop cannot register the
+class, and the mod fails to load. Mark the method `[Il2CppMethod]`. Methods that implement .NET interfaces are not
+affected.
