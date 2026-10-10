@@ -40,9 +40,9 @@ This guide is intended for mod developers. For installing and using mods, see th
   Mono games must use the .NET 4.x scripting runtime: Unity 2018 games that use the legacy .NET 3.5 runtime are not
   supported.
 
-::: info Pre-release
-Lustral has not been publicly released yet. This documentation describes its first release; until then, the packages it
-refers to (`Lustral.Sdk`, `Lustral.Templates`) are not available on NuGet.
+::: info Early version
+Lustral 0.x is an early version for testing: its API may change before version 1.0. Feedback on the API is welcome on
+the [issue tracker](https://github.com/LustralTeam/Lustral/issues) and the [Discord server](https://discord.gg/3Y6Ete73E3).
 :::
 
 ## Getting Help
