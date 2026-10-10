@@ -15,7 +15,11 @@ The game runs, but the `Lustral/Logs` folder is missing or contains no new log.
 - **File placement:** `winhttp.dll` and the `Lustral` folder must be located directly next to the game's executable,
   not in a subfolder. See the [Installation Guide](./installation#step-3-extract-the-package).
 - **Package type:** games containing `GameAssembly.dll` require the `il2cpp` package; all others require the `mono`
-  package.
+  package. With the wrong package, Lustral shows a message that names the package to install, and the game starts
+  without mods.
+- **64-bit games only:** Lustral supports 64-bit games. Windows does not load Lustral's `winhttp.dll` into a 32-bit
+  game, so the game runs without mods and no log is written. The Task Manager shows "(32 bit)" after the name of a
+  32-bit game.
 - **Other mod loaders:** Lustral cannot be installed alongside MelonLoader or BepInEx. BepInEx uses its own
   `winhttp.dll`, so installing one replaces the other. Uninstall the other loader and reinstall Lustral.
 - **Antivirus software:** check whether `winhttp.dll` or files in the `Lustral` folder were removed or blocked.
