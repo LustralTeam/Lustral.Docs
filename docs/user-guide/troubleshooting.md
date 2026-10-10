@@ -20,7 +20,10 @@ The game runs, but the `Lustral/Logs` folder is missing or contains no new log.
   `winhttp.dll`, so installing one replaces the other. Uninstall the other loader and reinstall Lustral.
 - **Antivirus software:** check whether `winhttp.dll` or files in the `Lustral` folder were removed or blocked.
 
-If `Lustral/Logs/stage0.log` exists, its last entries show how far the startup progressed.
+If `Lustral/Logs/stage0.log` exists, its last entries show how far the startup progressed. A message that the game
+"uses Unity's legacy .NET 3.5 scripting runtime" means that the game cannot run Lustral: some games made with Unity 2018
+use this older runtime, which Lustral does not support. The game runs normally without mods; delete `winhttp.dll` from
+the game folder to remove Lustral.
 
 ## A Mod Does Not Load
 

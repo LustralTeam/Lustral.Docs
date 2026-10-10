@@ -26,6 +26,11 @@ The game's assemblies are standard .NET assemblies: mods reference their types d
 All mods share the game's runtime, so if two mods ship different versions of the same library, only one version is
 loaded. Ship libraries only when necessary, or share them through a [library mod](./library-mods).
 
+Mono mods target .NET Standard 2.1, which Unity's Mono runtime implements from Unity 2021.2. Games made with earlier
+versions implement .NET Standard 2.0: mods load in them as well, but members that only .NET Standard 2.1 provides,
+such as `HashCode` or the `Span<T>` overloads of `string` and stream methods, fail there with a `TypeLoadException` or
+`MissingMethodException`. Avoid them in mods for such games.
+
 ## IL2CPP Games
 
 IL2CPP games contain no .NET code to reference. On its first launch with Lustral, the game's **interop assemblies** are

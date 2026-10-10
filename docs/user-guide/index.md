@@ -11,8 +11,9 @@ Lustral supports Unity games on Windows (x64). Linux support is planned.
 Unity games use one of two scripting backends, both of which Lustral supports. The backend determines which Lustral
 package to install (see the [Installation Guide](./installation)):
 
-- **Mono**: Unity 2019.4 and later.
-- **IL2CPP**: Unity 2022.3 and Unity 6. Earlier versions have not been tested.
+- **Mono**: Unity 2018.1 and later. Some games made with Unity 2018 use Unity's legacy .NET 3.5 scripting runtime,
+  which Lustral does not support; Lustral reports this when the game starts, and the game runs without mods.
+- **IL2CPP**: Unity 2018.1 and later.
 
 Mods are usually built for a specific game. Lustral checks each mod's declared requirements and does not load mods
 built for a different game or game version; the log records the reason.

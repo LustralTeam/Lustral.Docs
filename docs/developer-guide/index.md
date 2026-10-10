@@ -36,8 +36,8 @@ This guide is intended for mod developers. For installing and using mods, see th
 ## System Requirements
 
 - Windows, x64. Linux support is planned.
-- Mono games on Unity 2019.4 and later; IL2CPP games on Unity 2022.3 and Unity 6. Earlier IL2CPP versions have not been
-  tested.
+- Unity 2018.1 and later, on both scripting backends; tested on Unity 2018.4, 2021.3, 2022.3 and Unity 6. Mono games
+  must use the .NET 4.x scripting runtime: Unity 2018 games that use the legacy .NET 3.5 runtime are not supported.
 
 ::: info Pre-release
 Lustral has not been publicly released yet. This documentation describes its first release; until then, the packages it
