@@ -72,3 +72,16 @@ called. See [Custom Components](/developer-guide/custom-components#il2cpp).
 type must be an IL2CPP type: `Il2CppSystem.Int32` instead of `int`, `Il2CppSystem.String` instead of `string`, or a Unity
 or game type. The message names the type to use. For .NET objects, such as a `List<string>` or a custom class, use
 `[ManagedField]` instead.
+
+### LUS0303 {#lus0303}
+
+**Generic methods cannot be exposed to IL2CPP** (warning). Il2CppInterop skips generic methods when it injects a class,
+so `[Il2CppMethod]` on a generic method has no effect: neither Unity nor the game can call it. Call the generic method
+from a non-generic `[Il2CppMethod]` method instead; within the mod's own code, generic methods work as usual.
+
+### LUS0304 {#lus0304}
+
+**Il2CppInterop cannot inject this type** (error). Il2CppInterop cannot inject a type that is generic, nested in another
+type, derived from a generic type, or that implements a generic IL2CPP interface; for the first three, it throws when the
+mod loads. Declare injected types at the top level of a namespace, without type parameters. Generic .NET interfaces,
+such as `IEquatable<T>`, are not affected, because they are not part of the IL2CPP type.

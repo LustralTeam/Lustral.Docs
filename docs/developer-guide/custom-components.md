@@ -54,9 +54,13 @@ Requirements:
 - **`[InjectedType]` and `partial`.** Il2CppInterop's source generator, included in the mod's references, generates the
   rest of the class, including the constructor IL2CPP requires and its registration. Lustral registers every
   `[InjectedType]` class in the mod when the mod loads.
+- **A top-level, non-generic class**, deriving directly from a non-generic type such as `MonoBehaviour`. Il2CppInterop
+  cannot inject generic or nested types, types derived from a generic type, or types that implement a generic IL2CPP
+  interface ([LUS0304](/reference/analyzers#lus0304)).
 - **`[Il2CppMethod]` on every method Unity calls**: `Awake`, `Start`, `Update`, `OnDestroy`, `OnTriggerEnter`, and
   methods invoked through `SendMessage`. Only these methods are visible to Unity. The build reports Unity messages
-  without the attribute ([LUS0301](/reference/analyzers#lus0301)).
+  without the attribute ([LUS0301](/reference/analyzers#lus0301)). Generic methods cannot be exposed this way
+  ([LUS0303](/reference/analyzers#lus0303)); they can still be called from the class's other methods.
 - **State stored in properties marked `[Il2CppField]` or `[ManagedField]`**, not in plain fields. The C# object is a
   wrapper around the native object, and the game may return a different wrapper for the same component later, so state
   must be stored on the native object:
