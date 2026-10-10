@@ -53,8 +53,11 @@ persists, and repeat with the half that contains the problem.
 
 - **Without specific mods:** add them to `disabled` in `Lustral/loader.toml` (see
   [Disabling a Mod](./managing-mods#disabling-a-mod)).
-- **Without Lustral:** rename `winhttp.dll` in the game folder, for example to `winhttp.dll.disabled`. The game then
-  starts without Lustral. Restore the original name to enable it again.
+- **Without Lustral, through the launch options:** add `--no-mods` to the game's launch options (the same option as in
+  MelonLoader). In Steam, open the game's **Properties** and enter it under **Launch Options**; other launchers have a
+  similar setting. The game then starts without Lustral until the option is removed.
+- **Without Lustral, through its files:** rename `winhttp.dll` in the game folder, for example to
+  `winhttp.dll.disabled`. The game then starts without Lustral. Restore the original name to enable it again.
 
 ## IL2CPP Game Preparation
 
