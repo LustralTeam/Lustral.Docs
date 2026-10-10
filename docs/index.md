@@ -10,6 +10,9 @@ hero:
     alt: Lustral
   actions:
     - theme: brand
+      text: Download
+      link: /user-guide/installation#step-2-download-the-correct-package
+    - theme: alt
       text: User Guide
       link: /user-guide/
     - theme: alt

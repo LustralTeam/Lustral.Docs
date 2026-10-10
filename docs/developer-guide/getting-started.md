@@ -14,11 +14,10 @@ that loads in the game.
 
 ## Step 1: Install Lustral in the Game
 
-Download the [Lustral release](https://github.com/LustralTeam/Lustral/releases) that matches the game's scripting
-backend, as described in the [Installation Guide](/user-guide/installation):
+Download the latest Lustral package that matches the game's scripting backend, as described in the
+[Installation Guide](/user-guide/installation):
 
-- **IL2CPP** if the game folder contains `GameAssembly.dll`: `lustral-<version>-win-x64-il2cpp.zip`.
-- **Mono** otherwise: `lustral-<version>-win-x64-mono.zip`.
+<DownloadButtons />
 
 Extract the archive into the game folder, so that `winhttp.dll` and the `Lustral` folder are next to the game's
 executable.

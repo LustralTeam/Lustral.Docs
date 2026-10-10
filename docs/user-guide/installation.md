@@ -13,13 +13,19 @@ The game folder is the folder that contains the game's executable (`.exe`).
 
 ## Step 2: Download the Correct Package
 
-Lustral releases are published on [GitHub](https://github.com/LustralTeam/Lustral/releases). Each release provides a
-package for each scripting backend. Check the game folder to determine which one to download:
+Lustral provides a package for each scripting backend. Check the game folder to determine which one to download:
 
 | The game folder contains | Scripting backend | Package |
 | --- | --- | --- |
-| `GameAssembly.dll` | IL2CPP | `lustral-<version>-win-x64-il2cpp.zip` |
-| A `<game>_Data/Managed` folder with DLL files | Mono | `lustral-<version>-win-x64-mono.zip` |
+| `GameAssembly.dll` | IL2CPP | `lustral-win-x64-il2cpp.zip` |
+| A `<game>_Data/Managed` folder with DLL files | Mono | `lustral-win-x64-mono.zip` |
+
+The buttons below download the latest version:
+
+<DownloadButtons />
+
+Lustral supports 64-bit games. Earlier versions and the release notes are available on
+[GitHub](https://github.com/LustralTeam/Lustral/releases).
 
 ## Step 3: Extract the Package
 
@@ -34,7 +40,8 @@ game's executable:
 └─ Lustral/
 ```
 
-If extraction creates a `lustral-<version>` subfolder instead, move its contents up into the game folder.
+If extraction creates a `lustral-win-x64-il2cpp` or `lustral-win-x64-mono` subfolder instead, move its contents up into
+the game folder.
 
 ## Step 4: Launch the Game
 

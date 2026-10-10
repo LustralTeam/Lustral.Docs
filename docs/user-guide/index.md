@@ -20,8 +20,9 @@ built for a different game or game version; the log records the reason.
 
 Lustral only loads mods built for Lustral. MelonLoader and BepInEx mods are not supported.
 
-::: info Pre-release
-Lustral has not been publicly released yet. This documentation describes its first release.
+::: info Early version
+Lustral 0.x is an early version for testing, and its behavior may change before version 1.0. Problems can be reported
+as described in [Troubleshooting](./troubleshooting#reporting-issues).
 :::
 
 ## Safety
